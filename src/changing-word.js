@@ -1,4 +1,4 @@
-const words = ["website", "webapps", "apps", "things"];
+const words = ["websites", "webapps", "apps", "things"];
 const element = document.getElementById("changing-word");
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*{}[]<>?/\\|~";
