@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <title>experiment-portfolio</title>
+</head>
+
+<body>
+  <canvas id="space"></canvas>
+  <h3 class = "dev-warn">Still in development</h3>
+  <section class="section hero">
+    <div>
+      <h1>Hi, I'm Kartik Hala</h1>
+      <h1>I make, <span id="changing-word"></span></h1>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div class="about-content">
+      <h1>About Me</h1>
+      <p>I am Kartik. I try to solve real-world problems, driven by a deep curiosity for emerging technologies. I continuously expand my skills across various tech domains. When I'm not coding, I enjoy listening to music—synth-pop being my favorite genre.</p>
+    </div>
+  </section>
+
+  <section class="section projects">
+    <h1 class="">Projects</h1>
+
+  <!-- Row 1 -->
+  <div class="projects-row">
+    <div class="project-tile">Project 1</div>
+    <div class="project-tile">Project 2</div>
+    <div class="project-tile">Project 3</div>
+  </div>
+
+  <!-- Row 2 (reversed) -->
+  <div class="projects-row reverse">
+    <div class="project-tile">Project 4</div>
+    <div class="project-tile">Project 5</div>
+    <div class="project-tile">Project 6</div>
+  </div>
+  </section>
+
+  <section class="section contact">
+    <div class="contact-content">
+      <h1>Contact</h1>
+      <h3>Mail: kartikhala023@gmail.com</h3>
+    </div>
+  </section>
+
+  <script src="./src/space.js"></script>
+  <script src="./src/changing-word.js"></script>
+
+  <script>
+
+    // const text = document.querySelector(".hover-text");
+    // const letters = text.textContent.split("");
+
+    // text.innerHTML = letters.map(
+    //   letter => `<span class="letter">${letter}</span>`
+    // ).join("")
+
+    // const spans = document.querySelectorAll(".letter");
+
+    // spans.forEach(span => {
+    //   span.addEventListener("mouseenter", () => {
+    //     gsap.to(span, {
+    //       y: -20,
+    //       scale: 1.1,
+    //       duration: 0.3,
+    //       ease: "power2.out"
+    //     });
+    //   });
+    //   span.addEventListener("mouseleave", () => {
+    //     gsap.to(span, {
+    //       y: 0,
+    //       scale: 1,
+    //       duration: 0.3,
+    //       ease: "power2.out"
+    //     });
+    //   });
+    // });
+
+    // gsap.to("html", { "--myColor": "#0ae448", yoyo: true, repeat: 20, duration: 1 });
+
+    // gsap.from(".hero h1", {
+    //   scale: 0.5,
+    //   opacity: 0,
+    //   duration: 1.5,
+    //   ease: "power3.out"
+    // });
+
+    // gsap.to(".hero h1", {
+    //   scale: 2,
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: ".hero",
+    //     start: "top top",
+    //     end: "bottom top",
+    //     scrub: true
+    //   }
+    // });
+    gsap.to({}, {
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top center",
+        end: "bottom center",
+        scrub: true
+      }
+    });
+    gsap.utils.toArray(".section").forEach((section) => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
